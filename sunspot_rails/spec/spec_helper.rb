@@ -5,6 +5,10 @@ if rsolr_version = ENV['RSOLR_GEM_VERSION']
   gem "rsolr", rsolr_version
 end
 
+# Require the Database-specific gems
+ENV['DB'] ||= 'sqlite'
+Bundler.require(ENV['DB'])
+
 require File.expand_path('config/environment', ENV['RAILS_ROOT'])
 require 'rspec/rails'
 require 'rspec/autorun'
