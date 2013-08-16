@@ -1,0 +1,692 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f6d0d23cf94, pid=21152, tid=140106333488896
+#
+# JRE version: 7.0-b147
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (21.0-b17 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# J  org.apache.lucene.analysis.en.PorterStemmer.stem(I)Z
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f6d10659000):  JavaThread "qtp1978757802-14 - /solr/default/update?wt=ruby" [_thread_in_Java, id=21507, stack(0x00007f6d0c2d0000,0x00007f6d0c3d1000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000002ff97a1ee
+
+Registers:
+RAX=0x0000000000000003, RBX=0x00000000ff97a1e0, RCX=0x0000000000000032, RDX=0x0000000000000000
+RSP=0x00007f6d0c3cdfe0, RBP=0x0000000000000001, RSI=0x00007f6d0c3cdf88, RDI=0x00000000ffffffff
+R8 =0x00000000fffffffd, R9 =0x0000000000000065, R10=0x00000000fffffffe, R11=0x0000000000000000
+R12=0x0000000000000000, R13=0x00007f6d0d23cf58, R14=0x0000000000000000, R15=0x00007f6d10659000
+RIP=0x00007f6d0d23cf94, EFLAGS=0x0000000000010286, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f6d0c3cdfe0)
+0x00007f6d0c3cdfe0:   00000000ff97a1b8 0000000000000073
+0x00007f6d0c3cdff0:   00007f6d00000003 00007f6d0d005f98
+0x00007f6d0c3ce000:   ff7036a8ff708030 00007f6d0d005f98
+0x00007f6d0c3ce010:   00007f6d0c3ce078 00007f6d0d006290
+0x00007f6d0c3ce020:   00007f6d0d006290 0000000000000000
+0x00007f6d0c3ce030:   00000000ff97a1b8 00007f6d0c3ce038
+0x00007f6d0c3ce040:   00000000dc3fb51a 00007f6d0c3ce0a0
+0x00007f6d0c3ce050:   00000000dc3fbc08 00000000dc46ea50
+0x00007f6d0c3ce060:   00000000dc3fb560 00007f6d0c3ce028
+0x00007f6d0c3ce070:   00007f6d0c3ce0b0 00000000ff97a1b8
+0x00007f6d0c3ce080:   00007f6d0d194d40 00007f6d00000005
+0x00007f6d0c3ce090:   0000000000000000 00000000ff977dc8
+0x00007f6d0c3ce0a0:   00000000ff97a1b8 00007f6d0d194d40
+0x00007f6d0c3ce0b0:   00000000ff9b98f8 00000000ff9b9918
+0x00007f6d0c3ce0c0:   0000000100000001 ff97a130dbd6df08
+0x00007f6d0c3ce0d0:   00000000ff97a130 00000000ff977dc8
+0x00007f6d0c3ce0e0:   0000000200000005 f584acc800000000
+0x00007f6d0c3ce0f0:   00000000f584ec28 00000000f5851110
+0x00007f6d0c3ce100:   00000000f5850d08 00000000f5850ed0
+0x00007f6d0c3ce110:   000000050f091145 00000000f5850fc0
+0x00007f6d0c3ce120:   00000000ff97a130 0000000000000001
+0x00007f6d0c3ce130:   00007f6d0d20d494 000000000000001e
+0x00007f6d0c3ce140:   0000000000000005 00007f6d0d20d51c
+0x00007f6d0c3ce150:   00000000ff9b9958 000000000000001e
+0x00007f6d0c3ce160:   000000d8ff767800 00000000ffc40160
+0x00007f6d0c3ce170:   00000009000000d8 00000000f584f098
+0x00007f6d0c3ce180:   00000000ffbe23c0 00000000dc349bc8
+0x00007f6d0c3ce190:   0000000000000001 00007f6d0c3ce198
+0x00007f6d0c3ce1a0:   00000000dc34a420 00007f6d0c3ce1e8
+0x00007f6d0c3ce1b0:   00007f6d0c3ce218 00007f6d0d005f98
+0x00007f6d0c3ce1c0:   00007f6d0d005f98 00000000ffc40160
+0x00007f6d0c3ce1d0:   00000000ff9b9958 00007f6d0c3ce1d8 
+
+Instructions: (pc=0x00007f6d0d23cf94)
+0x00007f6d0d23cf74:   0e 44 89 54 24 08 44 0f b7 4c 43 10 4c 8b 14 24
+0x00007f6d0d23cf84:   45 8b 72 18 44 8b d0 41 83 c2 fb 8b f8 83 c7 fc
+0x00007f6d0d23cf94:   44 0f b7 44 7b 10 48 63 f0 0f b7 54 73 10 89 54
+0x00007f6d0d23cfa4:   24 0c 8b e8 83 c5 fe 44 0f b7 6c 6b 10 83 c0 fd 
+
+Register to memory mapping:
+
+RAX=0x0000000000000003 is an unknown value
+RBX=0x00000000ff97a1e0 is an oop
+[C 
+ - klass: {type array char}
+ - length: 50
+RCX=0x0000000000000032 is an unknown value
+RDX=0x0000000000000000 is an unknown value
+RSP=0x00007f6d0c3cdfe0 is pointing into the stack for thread: 0x00007f6d10659000
+RBP=0x0000000000000001 is an unknown value
+RSI=0x00007f6d0c3cdf88 is pointing into the stack for thread: 0x00007f6d10659000
+RDI=0x00000000ffffffff is an unknown value
+R8 =0x00000000fffffffd is an unknown value
+R9 =0x0000000000000065 is an unknown value
+R10=0x00000000fffffffe is an unknown value
+R11=0x0000000000000000 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x00007f6d0d23ca50 [CodeBlob (0x00007f6d0d23ca50)]
+Framesize: 8
+R14=0x0000000000000000 is an unknown value
+R15=0x00007f6d10659000 is a thread
+
+
+Stack: [0x00007f6d0c2d0000,0x00007f6d0c3d1000],  sp=0x00007f6d0c3cdfe0,  free space=1015k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J  org.apache.lucene.analysis.en.PorterStemmer.stem(I)Z
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f6cb007b800 JavaThread "commitScheduler-14-thread-1" [_thread_blocked, id=21549, stack(0x00007f6cff66c000,0x00007f6cff76d000)]
+  0x00007f6d10006000 JavaThread "DestroyJavaVM" [_thread_blocked, id=21490, stack(0x00007f6d17867000,0x00007f6d17968000)]
+  0x00007f6d10631000 JavaThread "Thread-13" [_thread_blocked, id=21534, stack(0x00007f6cff05a000,0x00007f6cff15b000)]
+  0x00007f6ca003b800 JavaThread "searcherExecutor-4-thread-1" [_thread_blocked, id=21533, stack(0x00007f6cff167000,0x00007f6cff268000)]
+  0x00007f6cac071000 JavaThread "searcherExecutor-6-thread-1" [_thread_blocked, id=21532, stack(0x00007f6cff268000,0x00007f6cff369000)]
+  0x00007f6ca4068000 JavaThread "searcherExecutor-5-thread-1" [_thread_blocked, id=21531, stack(0x00007f6cff369000,0x00007f6cff46a000)]
+  0x00007f6d1079a000 JavaThread "HashSessionScavenger-0" daemon [_thread_blocked, id=21526, stack(0x00007f6cffbfc000,0x00007f6cffcfd000)]
+  0x00007f6d10662800 JavaThread "qtp1978757802-19" [_thread_blocked, id=21512, stack(0x00007f6cffcfd000,0x00007f6cffdfe000)]
+  0x00007f6d10660800 JavaThread "qtp1978757802-18" [_thread_blocked, id=21511, stack(0x00007f6cffdfe000,0x00007f6cffeff000)]
+  0x00007f6d1065e800 JavaThread "qtp1978757802-17" [_thread_blocked, id=21510, stack(0x00007f6cffeff000,0x00007f6d00000000)]
+  0x00007f6d1065c800 JavaThread "qtp1978757802-16 Acceptor0 SocketConnector@0.0.0.0:8989" [_thread_in_native, id=21509, stack(0x00007f6d0c0ce000,0x00007f6d0c1cf000)]
+  0x00007f6d1065a800 JavaThread "qtp1978757802-15" [_thread_blocked, id=21508, stack(0x00007f6d0c1cf000,0x00007f6d0c2d0000)]
+=>0x00007f6d10659000 JavaThread "qtp1978757802-14 - /solr/default/update?wt=ruby" [_thread_in_Java, id=21507, stack(0x00007f6d0c2d0000,0x00007f6d0c3d1000)]
+  0x00007f6d10657000 JavaThread "qtp1978757802-13" [_thread_blocked, id=21506, stack(0x00007f6d0c3d1000,0x00007f6d0c4d2000)]
+  0x00007f6d10655800 JavaThread "qtp1978757802-12" [_thread_blocked, id=21505, stack(0x00007f6d0c4d2000,0x00007f6d0c5d3000)]
+  0x00007f6d10654800 JavaThread "qtp1978757802-11" [_thread_blocked, id=21504, stack(0x00007f6d0c5d3000,0x00007f6d0c6d4000)]
+  0x00007f6d10648800 JavaThread "qtp1978757802-10" [_thread_blocked, id=21503, stack(0x00007f6d0c6d4000,0x00007f6d0c7d5000)]
+  0x00007f6d1010c000 JavaThread "Service Thread" daemon [_thread_blocked, id=21501, stack(0x00007f6d0ccfd000,0x00007f6d0cdfe000)]
+  0x00007f6d1010a000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=21500, stack(0x00007f6d0cdfe000,0x00007f6d0ceff000)]
+  0x00007f6d10107000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=21499, stack(0x00007f6d0ceff000,0x00007f6d0d000000)]
+  0x00007f6d10104800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=21498, stack(0x00007f6d140cb000,0x00007f6d141cc000)]
+  0x00007f6d100bb000 JavaThread "Finalizer" daemon [_thread_blocked, id=21497, stack(0x00007f6d14355000,0x00007f6d14456000)]
+  0x00007f6d100b8800 JavaThread "Reference Handler" daemon [_thread_blocked, id=21496, stack(0x00007f6d14456000,0x00007f6d14557000)]
+
+Other Threads:
+  0x00007f6d100b1000 VMThread [stack: 0x00007f6d14557000,0x00007f6d14658000] [id=21495]
+  0x00007f6d1011f000 WatcherThread [stack: 0x00007f6d0cbfc000,0x00007f6d0ccfd000] [id=21502]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 161216K, used 14698K [0x00000000f5560000, 0x0000000100000000, 0x0000000100000000)
+  eden space 147968K, 2% used [0x00000000f5560000,0x00000000f5954e28,0x00000000fe5e0000)
+  from space 13248K, 80% used [0x00000000ff310000,0x00000000ffd75a70,0x0000000100000000)
+  to   space 13376K, 0% used [0x00000000fe5e0000,0x00000000fe5e0000,0x00000000ff2f0000)
+ PSOldGen        total 174784K, used 3409K [0x00000000e0000000, 0x00000000eaab0000, 0x00000000f5560000)
+  object space 174784K, 1% used [0x00000000e0000000,0x00000000e03547e8,0x00000000eaab0000)
+ PSPermGen       total 23744K, used 23599K [0x00000000dae00000, 0x00000000dc530000, 0x00000000e0000000)
+  object space 23744K, 99% used [0x00000000dae00000,0x00000000dc50bf70,0x00000000dc530000)
+
+Code Cache  [0x00007f6d0d000000, 0x00007f6d0d270000, 0x00007f6d10000000)
+ total_blobs=1131 nmethods=766 adapters=316 free_code_cache=46896Kb largest_free_block=47952448
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:01 1051324                            /opt/java/bin/java
+00600000-00601000 rw-p 00000000 08:01 1051324                            /opt/java/bin/java
+024f4000-02515000 rw-p 00000000 00:00 0                                  [heap]
+dae00000-dc530000 rw-p 00000000 00:00 0 
+dc530000-e0000000 rw-p 00000000 00:00 0 
+e0000000-eaab0000 rw-p 00000000 00:00 0 
+eaab0000-f5560000 rw-p 00000000 00:00 0 
+f5560000-100000000 rw-p 00000000 00:00 0 
+7f6c90000000-7f6c90021000 rw-p 00000000 00:00 0 
+7f6c90021000-7f6c94000000 ---p 00000000 00:00 0 
+7f6c94000000-7f6c94021000 rw-p 00000000 00:00 0 
+7f6c94021000-7f6c98000000 ---p 00000000 00:00 0 
+7f6c98000000-7f6c98021000 rw-p 00000000 00:00 0 
+7f6c98021000-7f6c9c000000 ---p 00000000 00:00 0 
+7f6c9c000000-7f6c9c021000 rw-p 00000000 00:00 0 
+7f6c9c021000-7f6ca0000000 ---p 00000000 00:00 0 
+7f6ca0000000-7f6ca007c000 rw-p 00000000 00:00 0 
+7f6ca007c000-7f6ca4000000 ---p 00000000 00:00 0 
+7f6ca4000000-7f6ca409c000 rw-p 00000000 00:00 0 
+7f6ca409c000-7f6ca8000000 ---p 00000000 00:00 0 
+7f6ca8000000-7f6ca8021000 rw-p 00000000 00:00 0 
+7f6ca8021000-7f6cac000000 ---p 00000000 00:00 0 
+7f6cac000000-7f6cac126000 rw-p 00000000 00:00 0 
+7f6cac126000-7f6cb0000000 ---p 00000000 00:00 0 
+7f6cb0000000-7f6cb00f9000 rw-p 00000000 00:00 0 
+7f6cb00f9000-7f6cb4000000 ---p 00000000 00:00 0 
+7f6cb4000000-7f6cb4021000 rw-p 00000000 00:00 0 
+7f6cb4021000-7f6cb8000000 ---p 00000000 00:00 0 
+7f6cb8000000-7f6cb8032000 rw-p 00000000 00:00 0 
+7f6cb8032000-7f6cbc000000 ---p 00000000 00:00 0 
+7f6cbc000000-7f6cbc021000 rw-p 00000000 00:00 0 
+7f6cbc021000-7f6cc0000000 ---p 00000000 00:00 0 
+7f6cc0000000-7f6cc0021000 rw-p 00000000 00:00 0 
+7f6cc0021000-7f6cc4000000 ---p 00000000 00:00 0 
+7f6cc4000000-7f6cc4021000 rw-p 00000000 00:00 0 
+7f6cc4021000-7f6cc8000000 ---p 00000000 00:00 0 
+7f6cc8000000-7f6cc8021000 rw-p 00000000 00:00 0 
+7f6cc8021000-7f6ccc000000 ---p 00000000 00:00 0 
+7f6ccc000000-7f6ccc021000 rw-p 00000000 00:00 0 
+7f6ccc021000-7f6cd0000000 ---p 00000000 00:00 0 
+7f6cd0000000-7f6cd0021000 rw-p 00000000 00:00 0 
+7f6cd0021000-7f6cd4000000 ---p 00000000 00:00 0 
+7f6cd4000000-7f6cd4021000 rw-p 00000000 00:00 0 
+7f6cd4021000-7f6cd8000000 ---p 00000000 00:00 0 
+7f6cd8000000-7f6cd8021000 rw-p 00000000 00:00 0 
+7f6cd8021000-7f6cdc000000 ---p 00000000 00:00 0 
+7f6cdc000000-7f6cdc021000 rw-p 00000000 00:00 0 
+7f6cdc021000-7f6ce0000000 ---p 00000000 00:00 0 
+7f6ce0000000-7f6ce0db9000 rw-p 00000000 00:00 0 
+7f6ce0db9000-7f6ce4000000 ---p 00000000 00:00 0 
+7f6ce4000000-7f6ce47b7000 rw-p 00000000 00:00 0 
+7f6ce47b7000-7f6ce8000000 ---p 00000000 00:00 0 
+7f6ce8000000-7f6ce8021000 rw-p 00000000 00:00 0 
+7f6ce8021000-7f6cec000000 ---p 00000000 00:00 0 
+7f6cec000000-7f6cec021000 rw-p 00000000 00:00 0 
+7f6cec021000-7f6cf0000000 ---p 00000000 00:00 0 
+7f6cf0000000-7f6cf0029000 rw-p 00000000 00:00 0 
+7f6cf0029000-7f6cf4000000 ---p 00000000 00:00 0 
+7f6cf4000000-7f6cf4021000 rw-p 00000000 00:00 0 
+7f6cf4021000-7f6cf8000000 ---p 00000000 00:00 0 
+7f6cf8000000-7f6cf8021000 rw-p 00000000 00:00 0 
+7f6cf8021000-7f6cfc000000 ---p 00000000 00:00 0 
+7f6cfedfd000-7f6cfedff000 r--s 00000000 08:05 15099867                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_9.tvd
+7f6cfedff000-7f6cfee00000 r--s 00000000 08:05 15112147                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_9.fdt
+7f6cfee00000-7f6cfee01000 r--s 00000000 08:05 15112274                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_9.nvd
+7f6cfee01000-7f6cfee08000 r--s 00000000 08:05 15099944                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_9_Lucene41_0.tim
+7f6cfee08000-7f6cfee0a000 r--s 00000000 08:05 15112345                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_9_Lucene41_0.pos
+7f6cfee0a000-7f6cfee0c000 r--s 00000000 08:05 15085834                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_9_Lucene41_0.doc
+7f6cfee21000-7f6cfee23000 r--s 00000000 08:05 15112295                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_4.tvd
+7f6cfee23000-7f6cfee24000 r--s 00000000 08:05 15112301                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_4.fdt
+7f6cfee24000-7f6cfee25000 r--s 00000000 08:05 15112303                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_4.nvd
+7f6cfee25000-7f6cfee2b000 r--s 00000000 08:05 15112293                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_4_Lucene41_0.tim
+7f6cfee2b000-7f6cfee2d000 r--s 00000000 08:05 15112288                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_4_Lucene41_0.pos
+7f6cfee2d000-7f6cfee2f000 r--s 00000000 08:05 15112069                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_4_Lucene41_0.doc
+7f6cfee2f000-7f6cfee31000 r--s 00000000 08:05 15112306                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_5.tvd
+7f6cfee31000-7f6cfee32000 r--s 00000000 08:05 15112280                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_5.fdt
+7f6cfee32000-7f6cfee33000 r--s 00000000 08:05 15112313                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_5.nvd
+7f6cfee33000-7f6cfee39000 r--s 00000000 08:05 15112307                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_5_Lucene41_0.tim
+7f6cfee39000-7f6cfee3b000 r--s 00000000 08:05 15112308                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_5_Lucene41_0.pos
+7f6cfee3b000-7f6cfee3d000 r--s 00000000 08:05 15112312                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_5_Lucene41_0.doc
+7f6cfee3d000-7f6cfee3e000 r--s 00000000 08:05 15112326                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_6.tvd
+7f6cfee3e000-7f6cfee3f000 r--s 00000000 08:05 15112322                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_6.fdt
+7f6cfee3f000-7f6cfee40000 r--s 00000000 08:05 15112319                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_6.nvd
+7f6cfee40000-7f6cfee41000 r--s 00000000 08:05 15112305                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_6_Lucene41_0.tim
+7f6cfee41000-7f6cfee42000 r--s 00000000 08:05 15112323                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_6_Lucene41_0.pos
+7f6cfee42000-7f6cfee43000 r--s 00000000 08:05 15112320                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_6_Lucene41_0.doc
+7f6cfee43000-7f6cfee45000 r--s 00000000 08:05 15112333                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_7.tvd
+7f6cfee45000-7f6cfee46000 r--s 00000000 08:05 15112335                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_7.fdt
+7f6cfee46000-7f6cfee47000 r--s 00000000 08:05 15112340                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_7.nvd
+7f6cfee47000-7f6cfee4e000 r--s 00000000 08:05 15112341                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_7_Lucene41_0.tim
+7f6cfee4e000-7f6cfee50000 r--s 00000000 08:05 15112336                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_7_Lucene41_0.pos
+7f6cfee50000-7f6cfee52000 r--s 00000000 08:05 15112339                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_7_Lucene41_0.doc
+7f6cfee52000-7f6cfee5a000 r-xp 00000000 08:01 1049162                    /opt/java/jre/lib/amd64/libmanagement.so
+7f6cfee5a000-7f6cff059000 ---p 00008000 08:01 1049162                    /opt/java/jre/lib/amd64/libmanagement.so
+7f6cff059000-7f6cff05a000 rw-p 00007000 08:01 1049162                    /opt/java/jre/lib/amd64/libmanagement.so
+7f6cff05a000-7f6cff05d000 ---p 00000000 00:00 0 
+7f6cff05d000-7f6cff15b000 rw-p 00000000 00:00 0                          [stack:21534]
+7f6cff15b000-7f6cff15d000 r--s 00000000 08:05 15099860                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_0.tvd (deleted)
+7f6cff15d000-7f6cff15e000 r--s 00000000 08:05 15106449                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_0.fdt (deleted)
+7f6cff15e000-7f6cff15f000 r--s 00000000 08:05 15099859                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_0.nvd (deleted)
+7f6cff15f000-7f6cff165000 r--s 00000000 08:05 15100957                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_0_Lucene41_0.tim (deleted)
+7f6cff165000-7f6cff167000 r--s 00000000 08:05 15099854                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_0_Lucene41_0.pos (deleted)
+7f6cff167000-7f6cff16a000 ---p 00000000 00:00 0 
+7f6cff16a000-7f6cff268000 rw-p 00000000 00:00 0                          [stack:21533]
+7f6cff268000-7f6cff26b000 ---p 00000000 00:00 0 
+7f6cff26b000-7f6cff369000 rw-p 00000000 00:00 0                          [stack:21532]
+7f6cff369000-7f6cff36c000 ---p 00000000 00:00 0 
+7f6cff36c000-7f6cff46a000 rw-p 00000000 00:00 0                          [stack:21531]
+7f6cff46a000-7f6cff46d000 ---p 00000000 00:00 0 
+7f6cff46d000-7f6cff56b000 rw-p 00000000 00:00 0 
+7f6cff56b000-7f6cff56e000 ---p 00000000 00:00 0 
+7f6cff56e000-7f6cff66c000 rw-p 00000000 00:00 0 
+7f6cff66c000-7f6cff66f000 ---p 00000000 00:00 0 
+7f6cff66f000-7f6cff76d000 rw-p 00000000 00:00 0                          [stack:21549]
+7f6cff76d000-7f6cff782000 r-xp 00000000 08:01 2315242                    /usr/lib/libgcc_s.so.1
+7f6cff782000-7f6cff982000 ---p 00015000 08:01 2315242                    /usr/lib/libgcc_s.so.1
+7f6cff982000-7f6cff983000 rw-p 00015000 08:01 2315242                    /usr/lib/libgcc_s.so.1
+7f6cff983000-7f6cff985000 r--s 00000000 08:05 15086866                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_0_Lucene41_0.doc (deleted)
+7f6cff985000-7f6cff986000 r--s 00000000 08:05 15112279                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_1.tvd (deleted)
+7f6cff986000-7f6cff987000 r--s 00000000 08:05 15112276                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_1.fdt (deleted)
+7f6cff987000-7f6cff988000 r--s 00000000 08:05 15112264                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_1.nvd (deleted)
+7f6cff988000-7f6cff98a000 r--s 00000000 08:05 15112262                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_1_Lucene41_0.tim (deleted)
+7f6cff98a000-7f6cff98b000 r--s 00000000 08:05 15112273                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_1_Lucene41_0.pos (deleted)
+7f6cff98b000-7f6cff98c000 r--s 00000000 08:05 15112144                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_1_Lucene41_0.doc (deleted)
+7f6cff98c000-7f6cff98e000 r--s 00000000 08:05 15112153                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_2.tvd (deleted)
+7f6cff98e000-7f6cff98f000 r--s 00000000 08:05 15112265                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_2.fdt (deleted)
+7f6cff98f000-7f6cff990000 r--s 00000000 08:05 15112278                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_2.nvd (deleted)
+7f6cff990000-7f6cff996000 r--s 00000000 08:05 15112145                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_2_Lucene41_0.tim (deleted)
+7f6cff996000-7f6cff998000 r--s 00000000 08:05 15112143                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_2_Lucene41_0.pos (deleted)
+7f6cff998000-7f6cff99a000 r--s 00000000 08:05 15112270                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_2_Lucene41_0.doc (deleted)
+7f6cff99a000-7f6cff99b000 r--s 00000000 08:05 15081335                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_3.tvd (deleted)
+7f6cff99b000-7f6cff99c000 r--s 00000000 08:05 15112282                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_3.fdt (deleted)
+7f6cff99c000-7f6cff99d000 r--s 00000000 08:05 15112286                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_3.nvd (deleted)
+7f6cff99d000-7f6cff99f000 r--s 00000000 08:05 15112299                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_3_Lucene41_0.tim (deleted)
+7f6cff99f000-7f6cff9a0000 r--s 00000000 08:05 15112287                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_3_Lucene41_0.pos (deleted)
+7f6cff9a0000-7f6cff9a1000 r--s 00000000 08:05 15112294                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_3_Lucene41_0.doc (deleted)
+7f6cff9a1000-7f6cff9a3000 r--s 00000000 08:05 15112295                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_4.tvd
+7f6cff9a3000-7f6cff9a4000 r--s 00000000 08:05 15112301                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_4.fdt
+7f6cff9a4000-7f6cff9a5000 r--s 00000000 08:05 15112303                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_4.nvd
+7f6cff9a5000-7f6cff9ab000 r--s 00000000 08:05 15112293                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_4_Lucene41_0.tim
+7f6cff9ab000-7f6cff9ad000 r--s 00000000 08:05 15112288                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_4_Lucene41_0.pos
+7f6cff9ad000-7f6cff9af000 r--s 00000000 08:05 15112069                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_4_Lucene41_0.doc
+7f6cff9af000-7f6cff9b5000 r--s 00000000 08:05 15112307                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_5_Lucene41_0.tim
+7f6cff9b5000-7f6cff9e7000 r-xp 00000000 08:01 1049185                    /opt/java/jre/lib/amd64/libsunec.so
+7f6cff9e7000-7f6cffbe6000 ---p 00032000 08:01 1049185                    /opt/java/jre/lib/amd64/libsunec.so
+7f6cffbe6000-7f6cffbec000 rw-p 00031000 08:01 1049185                    /opt/java/jre/lib/amd64/libsunec.so
+7f6cffbec000-7f6cffbfc000 rw-p 00000000 00:00 0 
+7f6cffbfc000-7f6cffbff000 ---p 00000000 00:00 0 
+7f6cffbff000-7f6cffcfd000 rw-p 00000000 00:00 0                          [stack:21526]
+7f6cffcfd000-7f6cffd00000 ---p 00000000 00:00 0 
+7f6cffd00000-7f6cffdfe000 rw-p 00000000 00:00 0                          [stack:21512]
+7f6cffdfe000-7f6cffe01000 ---p 00000000 00:00 0 
+7f6cffe01000-7f6cffeff000 rw-p 00000000 00:00 0                          [stack:21511]
+7f6cffeff000-7f6cfff02000 ---p 00000000 00:00 0 
+7f6cfff02000-7f6d00000000 rw-p 00000000 00:00 0                          [stack:21510]
+7f6d00000000-7f6d00021000 rw-p 00000000 00:00 0 
+7f6d00021000-7f6d04000000 ---p 00000000 00:00 0 
+7f6d04000000-7f6d04021000 rw-p 00000000 00:00 0 
+7f6d04021000-7f6d08000000 ---p 00000000 00:00 0 
+7f6d08000000-7f6d08021000 rw-p 00000000 00:00 0 
+7f6d08021000-7f6d0c000000 ---p 00000000 00:00 0 
+7f6d0c000000-7f6d0c002000 r--s 00000000 08:05 15112306                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_5.tvd
+7f6d0c002000-7f6d0c003000 r--s 00000000 08:05 15112280                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_5.fdt
+7f6d0c003000-7f6d0c004000 r--s 00000000 08:05 15112313                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_5.nvd
+7f6d0c004000-7f6d0c006000 r--s 00000000 08:05 15112308                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_5_Lucene41_0.pos
+7f6d0c006000-7f6d0c008000 r--s 00000000 08:05 15112312                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_5_Lucene41_0.doc
+7f6d0c008000-7f6d0c009000 r--s 00000000 08:05 15112326                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_6.tvd
+7f6d0c009000-7f6d0c00a000 r--s 00000000 08:05 15112322                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_6.fdt
+7f6d0c00a000-7f6d0c00b000 r--s 00000000 08:05 15112319                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_6.nvd
+7f6d0c00b000-7f6d0c00c000 r--s 00000000 08:05 15112305                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_6_Lucene41_0.tim
+7f6d0c00c000-7f6d0c010000 r--s 0002d000 08:01 1049257                    /opt/java/jre/lib/ext/sunjce_provider.jar
+7f6d0c010000-7f6d0c011000 r--s 00003000 08:01 1049254                    /opt/java/jre/lib/ext/sunec.jar
+7f6d0c011000-7f6d0c014000 r--s 00018000 08:01 1048606                    /opt/java/jre/lib/jce.jar
+7f6d0c014000-7f6d0c01d000 r--s 00055000 08:01 5753482                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-queryparser-4.4.0.jar
+7f6d0c01d000-7f6d0c01f000 r--s 0000b000 08:01 5753419                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/concurrentlinkedhashmap-lru-1.2.jar
+7f6d0c01f000-7f6d0c020000 r--s 00005000 08:01 5753474                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-phonetic-4.4.0.jar
+7f6d0c020000-7f6d0c021000 r--s 00008000 08:01 5753479                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-memory-4.4.0.jar
+7f6d0c021000-7f6d0c024000 r--s 00014000 08:01 5753480                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-misc-4.4.0.jar
+7f6d0c024000-7f6d0c025000 r--s 00004000 08:01 5753427                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/org.restlet.ext.servlet-2.1.1.jar
+7f6d0c025000-7f6d0c026000 r--s 00005000 08:01 5753448                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/noggit-0.5.jar
+7f6d0c026000-7f6d0c029000 r--s 00018000 08:01 5753477                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-grouping-4.4.0.jar
+7f6d0c029000-7f6d0c02f000 r--s 00043000 08:01 5753416                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/commons-configuration-1.6.jar
+7f6d0c02f000-7f6d0c038000 r--s 00061000 08:01 5753431                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/httpclient-4.2.3.jar
+7f6d0c038000-7f6d0c03d000 r--s 00041000 08:01 5753418                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/commons-lang-2.6.jar
+7f6d0c03d000-7f6d0c044000 r--s 00079000 08:01 5753449                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/wstx-asl-3.2.7.jar
+7f6d0c044000-7f6d0c047000 r--s 00446000 08:01 5753473                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-kuromoji-4.4.0.jar
+7f6d0c047000-7f6d0c049000 r--s 0000f000 08:01 5753429                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/spatial4j-0.3.jar
+7f6d0c049000-7f6d0c06e000 r--s 001f8000 08:01 5753476                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-core-4.4.0.jar
+7f6d0c06e000-7f6d0c075000 r--s 00055000 08:01 5753486                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/solr-solrj-4.4.0.jar
+7f6d0c075000-7f6d0c085000 r--s 00173000 08:01 5753472                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-common-4.4.0.jar
+7f6d0c085000-7f6d0c0ae000 r--s 001ee000 08:01 5753420                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/guava-14.0.1.jar
+7f6d0c0ae000-7f6d0c0ce000 r--s 0021f000 08:01 5753485                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/solr-core-4.4.0.jar
+7f6d0c0ce000-7f6d0c0d1000 ---p 00000000 00:00 0 
+7f6d0c0d1000-7f6d0c1cf000 rw-p 00000000 00:00 0                          [stack:21509]
+7f6d0c1cf000-7f6d0c1d2000 ---p 00000000 00:00 0 
+7f6d0c1d2000-7f6d0c2d0000 rw-p 00000000 00:00 0                          [stack:21508]
+7f6d0c2d0000-7f6d0c2d3000 ---p 00000000 00:00 0 
+7f6d0c2d3000-7f6d0c3d1000 rw-p 00000000 00:00 0                          [stack:21507]
+7f6d0c3d1000-7f6d0c3d4000 ---p 00000000 00:00 0 
+7f6d0c3d4000-7f6d0c4d2000 rw-p 00000000 00:00 0                          [stack:21506]
+7f6d0c4d2000-7f6d0c4d5000 ---p 00000000 00:00 0 
+7f6d0c4d5000-7f6d0c5d3000 rw-p 00000000 00:00 0                          [stack:21505]
+7f6d0c5d3000-7f6d0c5d6000 ---p 00000000 00:00 0 
+7f6d0c5d6000-7f6d0c6d4000 rw-p 00000000 00:00 0                          [stack:21504]
+7f6d0c6d4000-7f6d0c6d7000 ---p 00000000 00:00 0 
+7f6d0c6d7000-7f6d0c7d5000 rw-p 00000000 00:00 0                          [stack:21503]
+7f6d0c7d5000-7f6d0c7ea000 r-xp 00000000 08:01 1049181                    /opt/java/jre/lib/amd64/libnet.so
+7f6d0c7ea000-7f6d0c9ea000 ---p 00015000 08:01 1049181                    /opt/java/jre/lib/amd64/libnet.so
+7f6d0c9ea000-7f6d0c9eb000 rw-p 00015000 08:01 1049181                    /opt/java/jre/lib/amd64/libnet.so
+7f6d0c9eb000-7f6d0c9fb000 r-xp 00000000 08:01 1049163                    /opt/java/jre/lib/amd64/libnio.so
+7f6d0c9fb000-7f6d0cbfb000 ---p 00010000 08:01 1049163                    /opt/java/jre/lib/amd64/libnio.so
+7f6d0cbfb000-7f6d0cbfc000 rw-p 00010000 08:01 1049163                    /opt/java/jre/lib/amd64/libnio.so
+7f6d0cbfc000-7f6d0cbfd000 ---p 00000000 00:00 0 
+7f6d0cbfd000-7f6d0ccfd000 rw-p 00000000 00:00 0                          [stack:21502]
+7f6d0ccfd000-7f6d0cd00000 ---p 00000000 00:00 0 
+7f6d0cd00000-7f6d0cdfe000 rw-p 00000000 00:00 0                          [stack:21501]
+7f6d0cdfe000-7f6d0ce01000 ---p 00000000 00:00 0 
+7f6d0ce01000-7f6d0ceff000 rw-p 00000000 00:00 0                          [stack:21500]
+7f6d0ceff000-7f6d0cf02000 ---p 00000000 00:00 0 
+7f6d0cf02000-7f6d0d000000 rw-p 00000000 00:00 0                          [stack:21499]
+7f6d0d000000-7f6d0d270000 rwxp 00000000 00:00 0 
+7f6d0d270000-7f6d10954000 rw-p 00000000 00:00 0 
+7f6d10954000-7f6d14000000 ---p 00000000 00:00 0 
+7f6d14000000-7f6d14006000 r--s 00031000 08:01 5753446                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/httpcore-4.2.2.jar
+7f6d14006000-7f6d14009000 r--s 00025000 08:01 5753430                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/commons-io-2.1.jar
+7f6d14009000-7f6d14010000 r--s 00039000 08:01 5753415                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/commons-codec-1.7.jar
+7f6d14010000-7f6d14013000 r--s 00023000 08:01 5753484                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-suggest-4.4.0.jar
+7f6d14013000-7f6d14015000 r--s 00009000 08:01 5753414                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/commons-cli-1.2.jar
+7f6d14015000-7f6d1401b000 r--s 00044000 08:01 5753475                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-codecs-4.4.0.jar
+7f6d1401b000-7f6d1401d000 r--s 0000a000 08:01 5753422                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/hadoop-auth-2.0.5-alpha.jar
+7f6d1401d000-7f6d14027000 r--s 000a8000 08:01 5753426                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/org.restlet-2.1.1.jar
+7f6d14027000-7f6d14029000 r--s 00015000 08:01 5753483                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-spatial-4.4.0.jar
+7f6d14029000-7f6d1402d000 r--s 0001b000 08:01 5753478                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-highlighter-4.4.0.jar
+7f6d1402d000-7f6d14039000 r--s 000b3000 08:01 5753471                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.4.5.jar
+7f6d14039000-7f6d14049000 r--s 0007d000 08:01 5753425                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/joda-time-2.2.jar
+7f6d14049000-7f6d1406d000 r--s 0021a000 08:01 5753423                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/hadoop-common-2.0.5-alpha.jar
+7f6d1406d000-7f6d14073000 r--s 0002c000 08:01 5753481                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/lucene-queries-4.4.0.jar
+7f6d14073000-7f6d14075000 r--s 00003000 08:01 5753421                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/hadoop-annotations-2.0.5-alpha.jar
+7f6d14075000-7f6d1407b000 r--s 00068000 08:01 5753428                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/protobuf-java-2.4.0a.jar
+7f6d1407b000-7f6d1407d000 r--s 00005000 08:01 5753447                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/httpmime-4.2.3.jar
+7f6d1407d000-7f6d140b5000 r--s 003ed000 08:01 5753424                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/hadoop-hdfs-2.0.5-alpha.jar
+7f6d140b5000-7f6d140b8000 r--s 0000c000 08:01 5753417                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/solr-webapp/webapp/WEB-INF/lib/commons-fileupload-1.2.1.jar
+7f6d140b8000-7f6d140be000 r--s 017ea000 08:01 5748938                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/webapps/solr.war
+7f6d140be000-7f6d140c1000 r--s 00017000 08:01 5748819                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/jetty-io-8.1.10.v20130312.jar
+7f6d140c1000-7f6d140c2000 r--s 00002000 08:01 5748815                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/ext/slf4j-log4j12-1.6.6.jar
+7f6d140c2000-7f6d140cb000 r--s 0006d000 08:01 5748813                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/ext/log4j-1.2.16.jar
+7f6d140cb000-7f6d140ce000 ---p 00000000 00:00 0 
+7f6d140ce000-7f6d141cc000 rw-p 00000000 00:00 0                          [stack:21498]
+7f6d141cc000-7f6d14355000 r--p 00000000 08:01 2316216                    /usr/lib/locale/locale-archive
+7f6d14355000-7f6d14358000 ---p 00000000 00:00 0 
+7f6d14358000-7f6d14456000 rw-p 00000000 00:00 0                          [stack:21497]
+7f6d14456000-7f6d14459000 ---p 00000000 00:00 0 
+7f6d14459000-7f6d14557000 rw-p 00000000 00:00 0                          [stack:21496]
+7f6d14557000-7f6d14558000 ---p 00000000 00:00 0 
+7f6d14558000-7f6d14bcd000 rw-p 00000000 00:00 0                          [stack:21495]
+7f6d14bcd000-7f6d14d8c000 r--s 039fa000 08:01 1048616                    /opt/java/jre/lib/rt.jar
+7f6d14d8c000-7f6d14d8d000 ---p 00000000 00:00 0 
+7f6d14d8d000-7f6d14e8d000 rw-p 00000000 00:00 0                          [stack:21494]
+7f6d14e8d000-7f6d14e8e000 ---p 00000000 00:00 0 
+7f6d14e8e000-7f6d14f8e000 rw-p 00000000 00:00 0                          [stack:21493]
+7f6d14f8e000-7f6d14f8f000 ---p 00000000 00:00 0 
+7f6d14f8f000-7f6d1508f000 rw-p 00000000 00:00 0                          [stack:21492]
+7f6d1508f000-7f6d15090000 ---p 00000000 00:00 0 
+7f6d15090000-7f6d1519c000 rw-p 00000000 00:00 0                          [stack:21491]
+7f6d1519c000-7f6d151b9000 rw-p 00000000 00:00 0 
+7f6d151b9000-7f6d1520f000 rw-p 00000000 00:00 0 
+7f6d1520f000-7f6d15264000 rw-p 00000000 00:00 0 
+7f6d15264000-7f6d15270000 rw-p 00000000 00:00 0 
+7f6d15270000-7f6d1528d000 rw-p 00000000 00:00 0 
+7f6d1528d000-7f6d152e3000 rw-p 00000000 00:00 0 
+7f6d152e3000-7f6d15337000 rw-p 00000000 00:00 0 
+7f6d15337000-7f6d1538d000 rw-p 00000000 00:00 0 
+7f6d1538d000-7f6d1538e000 rw-p 00000000 00:00 0 
+7f6d1538e000-7f6d153a8000 r-xp 00000000 08:01 1049151                    /opt/java/jre/lib/amd64/libzip.so
+7f6d153a8000-7f6d155a8000 ---p 0001a000 08:01 1049151                    /opt/java/jre/lib/amd64/libzip.so
+7f6d155a8000-7f6d155a9000 rw-p 0001a000 08:01 1049151                    /opt/java/jre/lib/amd64/libzip.so
+7f6d155a9000-7f6d155b4000 r-xp 00000000 08:01 2266164                    /usr/lib/libnss_files-2.17.so
+7f6d155b4000-7f6d157b4000 ---p 0000b000 08:01 2266164                    /usr/lib/libnss_files-2.17.so
+7f6d157b4000-7f6d157b5000 r--p 0000b000 08:01 2266164                    /usr/lib/libnss_files-2.17.so
+7f6d157b5000-7f6d157b6000 rw-p 0000c000 08:01 2266164                    /usr/lib/libnss_files-2.17.so
+7f6d157b6000-7f6d157df000 r-xp 00000000 08:01 1049159                    /opt/java/jre/lib/amd64/libjava.so
+7f6d157df000-7f6d159df000 ---p 00029000 08:01 1049159                    /opt/java/jre/lib/amd64/libjava.so
+7f6d159df000-7f6d159e1000 rw-p 00029000 08:01 1049159                    /opt/java/jre/lib/amd64/libjava.so
+7f6d159e1000-7f6d159f0000 r-xp 00000000 08:01 1049170                    /opt/java/jre/lib/amd64/libverify.so
+7f6d159f0000-7f6d15bef000 ---p 0000f000 08:01 1049170                    /opt/java/jre/lib/amd64/libverify.so
+7f6d15bef000-7f6d15bf1000 rw-p 0000e000 08:01 1049170                    /opt/java/jre/lib/amd64/libverify.so
+7f6d15bf1000-7f6d15bf8000 r-xp 00000000 08:01 2266111                    /usr/lib/librt-2.17.so
+7f6d15bf8000-7f6d15df7000 ---p 00007000 08:01 2266111                    /usr/lib/librt-2.17.so
+7f6d15df7000-7f6d15df8000 r--p 00006000 08:01 2266111                    /usr/lib/librt-2.17.so
+7f6d15df8000-7f6d15df9000 rw-p 00007000 08:01 2266111                    /usr/lib/librt-2.17.so
+7f6d15df9000-7f6d15ef6000 r-xp 00000000 08:01 2266136                    /usr/lib/libm-2.17.so
+7f6d15ef6000-7f6d160f5000 ---p 000fd000 08:01 2266136                    /usr/lib/libm-2.17.so
+7f6d160f5000-7f6d160f6000 r--p 000fc000 08:01 2266136                    /usr/lib/libm-2.17.so
+7f6d160f6000-7f6d160f7000 rw-p 000fd000 08:01 2266136                    /usr/lib/libm-2.17.so
+7f6d160f7000-7f6d16ac7000 r-xp 00000000 08:01 1049197                    /opt/java/jre/lib/amd64/server/libjvm.so
+7f6d16ac7000-7f6d16cc7000 ---p 009d0000 08:01 1049197                    /opt/java/jre/lib/amd64/server/libjvm.so
+7f6d16cc7000-7f6d16d62000 rw-p 009d0000 08:01 1049197                    /opt/java/jre/lib/amd64/server/libjvm.so
+7f6d16d62000-7f6d16d9b000 rw-p 00000000 00:00 0 
+7f6d16d9b000-7f6d16f3e000 r-xp 00000000 08:01 2248857                    /usr/lib/libc-2.17.so
+7f6d16f3e000-7f6d1713e000 ---p 001a3000 08:01 2248857                    /usr/lib/libc-2.17.so
+7f6d1713e000-7f6d17142000 r--p 001a3000 08:01 2248857                    /usr/lib/libc-2.17.so
+7f6d17142000-7f6d17144000 rw-p 001a7000 08:01 2248857                    /usr/lib/libc-2.17.so
+7f6d17144000-7f6d17148000 rw-p 00000000 00:00 0 
+7f6d17148000-7f6d1714b000 r-xp 00000000 08:01 2265377                    /usr/lib/libdl-2.17.so
+7f6d1714b000-7f6d1734a000 ---p 00003000 08:01 2265377                    /usr/lib/libdl-2.17.so
+7f6d1734a000-7f6d1734b000 r--p 00002000 08:01 2265377                    /usr/lib/libdl-2.17.so
+7f6d1734b000-7f6d1734c000 rw-p 00003000 08:01 2265377                    /usr/lib/libdl-2.17.so
+7f6d1734c000-7f6d17362000 r-xp 00000000 08:01 1049195                    /opt/java/jre/lib/amd64/jli/libjli.so
+7f6d17362000-7f6d17561000 ---p 00016000 08:01 1049195                    /opt/java/jre/lib/amd64/jli/libjli.so
+7f6d17561000-7f6d17562000 rw-p 00015000 08:01 1049195                    /opt/java/jre/lib/amd64/jli/libjli.so
+7f6d17562000-7f6d17579000 r-xp 00000000 08:01 2254967                    /usr/lib/libpthread-2.17.so
+7f6d17579000-7f6d17778000 ---p 00017000 08:01 2254967                    /usr/lib/libpthread-2.17.so
+7f6d17778000-7f6d17779000 r--p 00016000 08:01 2254967                    /usr/lib/libpthread-2.17.so
+7f6d17779000-7f6d1777a000 rw-p 00017000 08:01 2254967                    /usr/lib/libpthread-2.17.so
+7f6d1777a000-7f6d1777e000 rw-p 00000000 00:00 0 
+7f6d1777e000-7f6d1779f000 r-xp 00000000 08:01 2250580                    /usr/lib/ld-2.17.so
+7f6d1779f000-7f6d177a1000 r--s 00005000 08:01 5748814                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/ext/slf4j-api-1.6.6.jar
+7f6d177a1000-7f6d177a3000 r--s 00003000 08:01 5748811                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/ext/jcl-over-slf4j-1.6.6.jar
+7f6d177a3000-7f6d177a4000 r--s 00000000 08:05 15112323                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_6_Lucene41_0.pos
+7f6d177a4000-7f6d177a5000 r--s 00000000 08:05 15112320                   /media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/default/data/index/_6_Lucene41_0.doc
+7f6d177a5000-7f6d177a7000 r--s 0000d000 08:01 5748817                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/jetty-deploy-8.1.10.v20130312.jar
+7f6d177a7000-7f6d177b1000 rw-p 00000000 00:00 0 
+7f6d177b1000-7f6d17867000 rw-p 00000000 00:00 0 
+7f6d17867000-7f6d1786a000 ---p 00000000 00:00 0 
+7f6d1786a000-7f6d1796c000 rw-p 00000000 00:00 0                          [stack:21490]
+7f6d1796c000-7f6d1796d000 r--s 00001000 08:01 5748812                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/ext/jul-to-slf4j-1.6.6.jar
+7f6d1796d000-7f6d1796f000 r--s 00019000 08:01 5748825                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/jetty-webapp-8.1.10.v20130312.jar
+7f6d1796f000-7f6d17971000 r--s 00017000 08:01 5748823                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/jetty-servlet-8.1.10.v20130312.jar
+7f6d17971000-7f6d17973000 r--s 00014000 08:01 5748821                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/jetty-security-8.1.10.v20130312.jar
+7f6d17973000-7f6d17977000 r--s 00088000 08:01 1048598                    /opt/java/jre/lib/jsse.jar
+7f6d17977000-7f6d1797c000 r--s 00050000 08:01 5748822                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/jetty-server-8.1.10.v20130312.jar
+7f6d1797c000-7f6d1797e000 r--s 00004000 08:01 5748816                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/jetty-continuation-8.1.10.v20130312.jar
+7f6d1797e000-7f6d17980000 r--s 00016000 08:01 5748818                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/jetty-http-8.1.10.v20130312.jar
+7f6d17980000-7f6d17983000 r--s 0002e000 08:01 5748827                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/servlet-api-3.0.jar
+7f6d17983000-7f6d17984000 r--s 00009000 08:01 5748826                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/jetty-xml-8.1.10.v20130312.jar
+7f6d17984000-7f6d17989000 r--s 00041000 08:01 5748824                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/lib/jetty-util-8.1.10.v20130312.jar
+7f6d17989000-7f6d17992000 r--s 00254000 08:01 1048622                    /opt/java/jre/lib/resources.jar
+7f6d17992000-7f6d17994000 r--s 0000a000 08:01 5748937                    /home/xinuc/trashcan/blsunspot/sunspot/sunspot_solr/solr/start.jar
+7f6d17994000-7f6d1799c000 rw-s 00000000 00:1f 360576                     /tmp/hsperfdata_xinuc/21152
+7f6d1799c000-7f6d1799d000 rw-p 00000000 00:00 0 
+7f6d1799d000-7f6d1799e000 r--p 00000000 00:00 0 
+7f6d1799e000-7f6d1799f000 rw-p 00000000 00:00 0 
+7f6d1799f000-7f6d179a0000 r--p 00021000 08:01 2250580                    /usr/lib/ld-2.17.so
+7f6d179a0000-7f6d179a1000 rw-p 00022000 08:01 2250580                    /usr/lib/ld-2.17.so
+7f6d179a1000-7f6d179a2000 rw-p 00000000 00:00 0 
+7fff81f48000-7fff81f69000 rw-p 00000000 00:00 0                          [stack]
+7fff81ffe000-7fff82000000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xms256m -Xmx512m -Djetty.port=8989 -Dsolr.data.dir=/media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr/data/development -Dsolr.solr.home=/media/data/PROJECTNOW/current/newbukalapak/bukalapak/solr -Djava.util.logging.config.file=/tmp/logging.properties20130816-21152-12hj5p2 
+java_command: start.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/opt/java
+PATH=/home/xinuc/.rvm/gems/ruby-1.9.3-p0@bukalapak/bin:/home/xinuc/.rvm/gems/ruby-1.9.3-p0@global/bin:/home/xinuc/.rvm/rubies/ruby-1.9.3-p0/bin:/home/xinuc/.rvm/bin:/usr/local/heroku/bin:/home/xinuc/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/games:/opt/go/bin:/home/xinuc/.cljr/bin:node_modules/.bin:/home/xinuc/.cabal/bin
+SHELL=/bin/zsh
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x84be70], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x84be70], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x6f3820], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x6f3820], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x6f3820], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x6f3820], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x6f3190], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x6f5650], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x6f5650], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x6f5650], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x6f5650], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Linux
+uname:Linux 3.9.9-1-ARCH #1 SMP PREEMPT Wed Jul 3 22:45:16 CEST 2013 x86_64
+libc:glibc 2.17 NPTL 2.17 
+rlimit: STACK 8192k, CORE 0k, NPROC 46130, NOFILE 4096, AS infinity
+load average:1.12 0.84 0.75
+
+/proc/meminfo:
+MemTotal:        5910040 kB
+MemFree:         2028372 kB
+Buffers:          136704 kB
+Cached:          1217204 kB
+SwapCached:          108 kB
+Active:          2267120 kB
+Inactive:        1374656 kB
+Active(anon):    1630200 kB
+Inactive(anon):   736020 kB
+Active(file):     636920 kB
+Inactive(file):   638636 kB
+Unevictable:          32 kB
+Mlocked:              32 kB
+SwapTotal:       9869308 kB
+SwapFree:        9868644 kB
+Dirty:               752 kB
+Writeback:             0 kB
+AnonPages:       2275896 kB
+Mapped:           233524 kB
+Shmem:             78124 kB
+Slab:             124356 kB
+SReclaimable:      96996 kB
+SUnreclaim:        27360 kB
+KernelStack:        3728 kB
+PageTables:        31724 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    12824328 kB
+Committed_AS:    5241408 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      434100 kB
+VmallocChunk:   34359288080 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    587776 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       10496 kB
+DirectMap2M:     6074368 kB
+
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i5 CPU       M 480  @ 2.67GHz
+stepping	: 5
+microcode	: 0x2
+cpu MHz		: 2666.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt lahf_lm ida arat dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 5322.17
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i5 CPU       M 480  @ 2.67GHz
+stepping	: 5
+microcode	: 0x2
+cpu MHz		: 2667.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt lahf_lm ida arat dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 5322.17
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i5 CPU       M 480  @ 2.67GHz
+stepping	: 5
+microcode	: 0x2
+cpu MHz		: 1199.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 2
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt lahf_lm ida arat dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 5322.17
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i5 CPU       M 480  @ 2.67GHz
+stepping	: 5
+microcode	: 0x2
+cpu MHz		: 1199.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 2
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt lahf_lm ida arat dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 5322.17
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 5910040k(2028372k free), swap 9869308k(9868644k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (21.0-b17) for linux-amd64 JRE (1.7.0-b147), built on Jun 27 2011 01:30:59 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Fri Aug 16 16:52:46 2013
+elapsed time: 87 seconds
+
